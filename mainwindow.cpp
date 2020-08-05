@@ -19,6 +19,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::initLayout()
 {
+    auto resources = StringResources::getInstance();
+    auto regions = resources->getValue("regions");
+
     setWindowTitle("Pacie");
     QGridLayout *gridLayout = new QGridLayout;
     gridLayout->setHorizontalSpacing(8);
@@ -27,4 +30,5 @@ void MainWindow::initLayout()
     gridLayout->addWidget(ui->mirrorTbl,0,1,1,1);
     ui->centralwidget->setLayout(gridLayout);
 }
+
 

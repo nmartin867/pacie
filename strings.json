@@ -1,134 +1,134 @@
 {
-    "regions":[
+"regions":{
 
-                {"all":"All"},
+"all":"All",
 
-                {"AU":"Australia"},
+"AU":"Australia",
 
-                {"AT":"Austria"},
+"AT":"Austria",
 
-                {"BD":"Bangladesh"},
+"BD":"Bangladesh",
 
-                {"BY":"Belarus"},
+"BY":"Belarus",
 
-                {"BE":"Belgium"},
+"BE":"Belgium",
 
-                {"BA":"Bosnia and Herzegovina"},
+"BA":"Bosnia and Herzegovina",
 
-                {"BR":"Brazil"},
+"BR":"Brazil",
 
-                {"BG":"Bulgaria"},
+"BG":"Bulgaria",
 
-                {"CA":"Canada"},
+"CA":"Canada",
 
-                {"CL":"Chile"},
+"CL":"Chile",
 
-                {"CN":"China"},
+"CN":"China",
 
-                {"CO":"Colombia"},
+"CO":"Colombia",
 
-                {"HR":"Croatia"},
+"HR":"Croatia",
 
-                {"CZ":"Czechia"},
+"CZ":"Czechia",
 
-                {"DK":"Denmark"},
+"DK":"Denmark",
 
-                {"EC":"Ecuador"},
+"EC":"Ecuador",
 
-                {"FI":"Finland"},
+"FI":"Finland",
 
-                {"FR":"France"},
+"FR":"France",
 
-                {"GE":"Georgia"},
+"GE":"Georgia",
 
-                {"DE":"Germany"},
+"DE":"Germany",
 
-                {"GR":"Greece"},
+"GR":"Greece",
 
-                {"HK":"Hong Kong"},
+"HK":"Hong Kong",
 
-                {"HU":"Hungary"},
+"HU":"Hungary",
 
-                {"IS":"Iceland"},
+"IS":"Iceland",
 
-                {"IN":"India"},
+"IN":"India",
 
-                {"ID":"Indonesia"},
+"ID":"Indonesia",
 
-                {"IR":"Iran"},
+"IR":"Iran",
 
-                {"IE":"Ireland"},
+"IE":"Ireland",
 
-                {"IL":"Israel"},
+"IL":"Israel",
 
-                {"IT":"Italy"},
+"IT":"Italy",
 
-                {"JP":"Japan"},
+"JP":"Japan",
 
-                {"KZ":"Kazakhstan"},
+"KZ":"Kazakhstan",
 
-                {"KE":"Kenya"},
+"KE":"Kenya",
 
-                {"LV":"Latvia"},
+"LV":"Latvia",
 
-                {"LT":"Lithuania"},
+"LT":"Lithuania",
 
-                {"LU":"Luxembourg"},
+"LU":"Luxembourg",
 
-                {"NL":"Netherlands"},
+"NL":"Netherlands",
 
-                {"NC":"New Caledonia"},
+"NC":"New Caledonia",
 
-                {"NZ":"New Zealand"},
+"NZ":"New Zealand",
 
-                {"MK":"North Macedonia"},
+"MK":"North Macedonia",
 
-                {"NO":"Norway"},
+"NO":"Norway",
 
-                {"PY":"Paraguay"},
+"PY":"Paraguay",
 
-                {"PH":"Philippines"},
+"PH":"Philippines",
 
-                {"PL":"Poland"},
+"PL":"Poland",
 
-                {"PT":"Portugal"},
+"PT":"Portugal",
 
-                {"RO":"Romania"},
+"RO":"Romania",
 
-                {"RU":"Russia"},
+"RU":"Russia",
 
-                {"RS":"Serbia"},
+"RS":"Serbia",
 
-                {"SG":"Singapore"},
+"SG":"Singapore",
 
-                {"SK":"Slovakia"},
+"SK":"Slovakia",
 
-                {"SI":"Slovenia"},
+"SI":"Slovenia",
 
-                {"ZA":"South Africa"},
+"ZA":"South Africa",
 
-                {"KR":"South Korea"},
+"KR":"South Korea",
 
-                {"ES":"Spain"},
+"ES":"Spain",
 
-                {"SE":"Sweden"},
+"SE":"Sweden",
 
-                {"CH":"Switzerland"},
+"CH":"Switzerland",
 
-                {"TW":"Taiwan"},
+"TW":"Taiwan",
 
-                {"TH":"Thailand"},
+"TH":"Thailand",
 
-                {"TR":"Turkey"},
+"TR":"Turkey",
 
-                {"UA":"Ukraine"},
+"UA":"Ukraine",
 
-                {"GB":"United Kingdom"},
+"GB":"United Kingdom",
 
-                {"VN":"Vietnam"},
+"VN":"Vietnam",
 
-                {"US":"United States"}
-    ]
+"US":"United States"
+}
 }
 
 

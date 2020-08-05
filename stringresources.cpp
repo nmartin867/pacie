@@ -1,16 +1,19 @@
 #include "stringresources.h"
-
+#include "constants.h"
 #include <QFile>
 #include <QFileInfo>
 #include <QJsonParseError>
+#include <QJsonObject>
 #include <QDebug>
+
+StringResources* StringResources::instance = 0;
 
 StringResources::StringResources()
 {
-
+    initialize();
 }
 
-QMap<QString, QVariant> *StringResources::initialize() const
+void StringResources::initialize()
 {
     QFile file(S_RESOURCE_FILE_PATH);
     QJsonParseError jsonError;
@@ -18,34 +21,32 @@ QMap<QString, QVariant> *StringResources::initialize() const
     if(file.open(QIODevice::ReadWrite | QIODevice::Text)) {
         QJsonDocument jsonDoc = QJsonDocument::fromJson(file.readAll(), &jsonError);
         if(jsonError.error == QJsonParseError::NoError) {
-             if(jsonError.error == QJsonParseError::NoError) {
-                 QJsonObject localObject = jsonDoc.object();
-             }
+            if(jsonError.error == QJsonParseError::NoError) {
+                auto data = jsonDoc.object();
+                resourceMap = data.toVariantMap();
+            }
         }
     }
 }
 
-
-
-
-StringResources *StringResources::getInstance()
+StringResources* StringResources::getInstance()
 {
-    if(!instance)
+    if(instance == 0)
         instance = new StringResources();
     return instance;
 }
 
-QString *StringResources::getString(const QString &key) const
+QVariant StringResources::getValue(const QString &key) const
 {
-
+   return resourceMap[key];
 }
 
-bool StringResources::setString(const QString &key, const QString &value)
+void StringResources::setValue(const QString &key, const QVariant &value)
 {
-
+    resourceMap[key] = value;
 }
 
 bool StringResources::exists(const QString &key)
 {
-
+    return resourceMap.contains(key);
 }

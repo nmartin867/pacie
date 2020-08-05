@@ -4,23 +4,19 @@
 #include <QString>
 #include <QVariant>
 
-const QString S_RESOURCE_FILE_PATH = QString("strings.json");
-
 class StringResources
 {
 private:
     StringResources();
-    static StringResources *instance;
-    QMap<QString, QVariant> *resourceMap;
-    QMap<QString, QVariant> *initialize() const;
-    QMessageLogger *log = new QMessageLogger();
+    void initialize();
 
+    static StringResources* instance;
+    QMap<QString, QVariant> resourceMap;
 public:
-    static StringResources *getInstance();
-    QString *getString(const QString &key) const;
-    bool setString(const QString &key, const QString &value);
+    static StringResources* getInstance();
+    QVariant getValue(const QString &key) const;
+    void setValue(const QString &key, const QVariant &value);
     bool exists(const QString &key);
-
 };
 
 #endif // STRINGRESOURCES_H
