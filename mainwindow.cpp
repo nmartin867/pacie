@@ -31,4 +31,10 @@ void MainWindow::initLayout()
     ui->centralwidget->setLayout(gridLayout);
 }
 
+void MainWindow::initRegions()
+{
+
+
+}
+
 

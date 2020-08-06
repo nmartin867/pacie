@@ -21,6 +21,7 @@ SOURCES += \
     stringresources.cpp
 
 HEADERS += \
+    INIReader.h \
     constants.h \
     mainwindow.h \
     stringresources.h
@@ -34,4 +35,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    strings.json
+    configuration.ini
