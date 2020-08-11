@@ -37,32 +37,22 @@ void MainWindow::initLayout()
 
 void MainWindow::initRegions()
 {
-    QRegExp rx("([A-Za-z]{2})=([A-Za-z]* ?[A-Za-z]*)?$");
+    QRegExp rx("([A-Za-z]{2,3})=([A-Za-z]* ?[A-Za-z]*)?$");
     QFile inputFile(resource_path);
     if (inputFile.open(QIODevice::ReadOnly))
     {
+        regions = new QMap<QString, QString>();
         QTextStream in(&inputFile);
         while (!in.atEnd())
         {
-
-            auto line = in.readLine();
-            if(!line.isEmpty()) {
-                rx.indexIn(line);
-                qDebug() << rx.cap(1);
-                qDebug() << rx.cap(2);
-            }
-
-            //qDebug() << line;
-
-            //qDebug() << rx.captureCount();
-
-            //if(rx.indexIn(in.readLine()) < 0 || rx.captureCount() < 3) continue;
-            //qDebug() << rx.cap(1);
-            //qDebug() << rx.cap(2);
-
+           if(rx.indexIn(in.readLine().trimmed()) < 0) continue;
+           auto key = rx.cap(1); auto value = rx.cap(2);
+           ui->regionComboBox->addItem(value,key);
+           regions->insert(key,value);
         }
         inputFile.close();
     }
+
 }
 
 

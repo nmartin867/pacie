@@ -16,7 +16,9 @@ public:
     ~MainWindow();
 
 private:
+    QMap<QString, QString> *regions;
     Ui::MainWindow *ui;
+
     void initLayout();
     void initRegions();
 };
