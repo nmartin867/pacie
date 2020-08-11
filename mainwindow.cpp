@@ -1,7 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "constants.h"
+#include "INIReader.h"
 
 #include <QGridLayout>
+#include <QDebug>
+#include <QFile>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -19,8 +23,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::initLayout()
 {
-    auto resources = StringResources::getInstance();
-    auto regions = resources->getValue("regions");
 
     setWindowTitle("Pacie");
     QGridLayout *gridLayout = new QGridLayout;
@@ -29,12 +31,38 @@ void MainWindow::initLayout()
     gridLayout->addWidget(ui->groupBox,0,0,1,1);
     gridLayout->addWidget(ui->mirrorTbl,0,1,1,1);
     ui->centralwidget->setLayout(gridLayout);
+
+    initRegions();
 }
 
 void MainWindow::initRegions()
 {
+    QRegExp rx("([A-Za-z]{2})=([A-Za-z]* ?[A-Za-z]*)?$");
+    QFile inputFile(resource_path);
+    if (inputFile.open(QIODevice::ReadOnly))
+    {
+        QTextStream in(&inputFile);
+        while (!in.atEnd())
+        {
 
+            auto line = in.readLine();
+            if(!line.isEmpty()) {
+                rx.indexIn(line);
+                qDebug() << rx.cap(1);
+                qDebug() << rx.cap(2);
+            }
 
+            //qDebug() << line;
+
+            //qDebug() << rx.captureCount();
+
+            //if(rx.indexIn(in.readLine()) < 0 || rx.captureCount() < 3) continue;
+            //qDebug() << rx.cap(1);
+            //qDebug() << rx.cap(2);
+
+        }
+        inputFile.close();
+    }
 }
 
 

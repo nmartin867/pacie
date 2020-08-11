@@ -17,14 +17,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp \
-    stringresources.cpp
+    mainwindow.cpp
 
 HEADERS += \
     INIReader.h \
     constants.h \
-    mainwindow.h \
-    stringresources.h
+    mainwindow.h
 
 FORMS += \
     mainwindow.ui

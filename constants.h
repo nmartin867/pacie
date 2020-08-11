@@ -3,6 +3,6 @@
 
 #include <QString>
 
-const QString S_RESOURCE_FILE_PATH = QString("strings.json");
+const QString resource_path = "configuration.ini";
 
 #endif // CONSTANTS_H
