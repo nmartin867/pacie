@@ -21,5 +21,7 @@ private:
 
     void initLayout();
     void initRegions();
+
+    void attachHandlers();
 };
 #endif // MAINWINDOW_H

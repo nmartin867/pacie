@@ -6,6 +6,7 @@
 #include <QGridLayout>
 #include <QDebug>
 #include <QFile>
+#include <QCheckBox>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -23,7 +24,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::initLayout()
 {
-
     setWindowTitle("Pacie");
     QGridLayout *gridLayout = new QGridLayout;
     gridLayout->setHorizontalSpacing(8);
@@ -31,6 +31,8 @@ void MainWindow::initLayout()
     gridLayout->addWidget(ui->groupBox,0,0,1,1);
     gridLayout->addWidget(ui->mirrorTbl,0,1,1,1);
     ui->centralwidget->setLayout(gridLayout);
+
+    attachHandlers();
 
     initRegions();
 }
@@ -45,14 +47,19 @@ void MainWindow::initRegions()
         QTextStream in(&inputFile);
         while (!in.atEnd())
         {
-           if(rx.indexIn(in.readLine().trimmed()) < 0) continue;
-           auto key = rx.cap(1); auto value = rx.cap(2);
-           ui->regionComboBox->addItem(value,key);
-           regions->insert(key,value);
+            if(rx.indexIn(in.readLine().trimmed()) < 0) continue;
+            auto key = rx.cap(1); auto value = rx.cap(2);
+            ui->regionComboBox->addItem(value,key);
+            regions->insert(key,value);
         }
         inputFile.close();
     }
 
 }
 
+void MainWindow::attachHandlers() {
+    connect(ui->httpChkBox, &QCheckBox::stateChanged, [this](int state){
+        qDebug() << sender();
 
+    });
+}
